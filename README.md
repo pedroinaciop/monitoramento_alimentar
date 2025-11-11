@@ -1,6 +1,5 @@
 # 🍃 Monitoramento Alimentar
 
-## 📖 Descrição Geral
 O **Sistema de Monitoramento Alimentar** é uma aplicação web desenvolvida como Trabalho de Conclusão de Curso (TCC) com o objetivo de auxiliar usuários no acompanhamento de seus hábitos alimentares e medidas corporais, promovendo maior controle sobre a saúde e o bem-estar físico.
 
 A plataforma permite o **registro de medidas corporais**, o **cálculo automático do IMC (Índice de Massa Corporal)** e o **monitoramento da evolução física ao longo do tempo**, além de oferecer um **painel interativo** para visualização de dados e relatórios.
