@@ -4,6 +4,8 @@ O **Sistema de Monitoramento Alimentar** é uma aplicação web desenvolvida com
 
 A plataforma permite o **registro de medidas corporais**, o **cálculo automático do IMC (Índice de Massa Corporal)** e o **monitoramento da evolução física ao longo do tempo**, além de oferecer um **painel interativo** para visualização de dados e relatórios.
 
+---
+
 ## 🧩 Objetivo Geral
 Desenvolver um sistema web que possibilite o monitoramento de informações relacionadas à alimentação e composição corporal, contribuindo para o acompanhamento da saúde e incentivo a hábitos alimentares saudáveis.
 
@@ -13,6 +15,8 @@ Desenvolver um sistema web que possibilite o monitoramento de informações rela
 - Armazenar as informações em um banco de dados **MySQL**;  
 - Permitir o cálculo automático do **IMC** e a classificação conforme os parâmetros da **Organização Mundial da Saúde (OMS)**;
 - Geração de relatórios com dados cadastrais do usuário
+
+---
 
 ## 🧱 Arquitetura do Sistema
 
@@ -42,6 +46,8 @@ O sistema foi desenvolvido seguindo a arquitetura **cliente-servidor**, dividida
 | Estilo | **Material UI / Ant Design** | Design moderno e responsivo |
 | Hospedagem | **Hostinger / AWS (planejado)** | Implantação da aplicação e banco de dados |
 
+---
+
 ### ⚙️Principais responsabilidades
 - Criação e gerenciamento das entidades `Usuário`, `Medidas`, `Refeição` e `Alimento`;
 - Implementação dos endpoints REST para operações CRUD;
@@ -52,7 +58,9 @@ O sistema foi desenvolvido seguindo a arquitetura **cliente-servidor**, dividida
 ✅ Cadastro e autenticação de usuários  
 ✅ Registro de medidas corporais (altura, peso, tórax, cintura, quadril, etc.)  
 ✅ Cálculo automático do IMC e exibição da classificação  
-✅ Registro e acompanhamento de refeições diárias  
+✅ Registro e acompanhamento de refeições diárias 
+
+---
 
 ### 🧠 Metodologia de Desenvolvimento
 O projeto foi desenvolvido utilizando a **metodologia incremental**, permitindo a construção gradual das funcionalidades e testes contínuos de integração entre as camadas.  
@@ -64,6 +72,8 @@ O projeto foi desenvolvido utilizando a **metodologia incremental**, permitindo 
 4. Integração entre front-end e back-end;  
 5. Testes unitários e de integração;  
 6. Implantação e documentação final.
+
+---
 
 ### 🚀 Instalação e Execução
 
@@ -96,6 +106,8 @@ npm install
 # Executar o projeto
 npm start
 ```
+
+---
 
 ### 🖼️ Prints do Sistema
 
