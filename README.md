@@ -92,9 +92,9 @@ O projeto foi desenvolvido utilizando a **metodologia incremental**, permitindo 
 ## 🚀 Instalação e Execução
 
 ### 🔧 Pré-requisitos
-- Java 17+  
-- Node.js 18+  
-- MySQL 8+  
+- Java 24  
+- Node.js 25 
+- MySQL  
 
 ### 🖥️ Back-End
 ```bash
@@ -121,4 +121,28 @@ npm install
 npm start
 ```
 
+--
 
+##🖼️ Prints do Sistema
+
+	Tela de autenticação de usuários
+
+	Painel principal com IMC e medidas corporais
+
+	Registro e listagem das refeições do usuário
+
+	Gráfico de evolução do IMC e peso ao longo do tempo
+
+--
+
+##📈 Resultados Esperados
+
+Com a implantação do sistema, espera-se que o usuário consiga acompanhar de forma prática e visual a evolução de suas medidas corporais e hábitos alimentares, utilizando os indicadores apresentados como apoio para uma rotina mais saudável e equilibrada.
+
+##📚 Referências Bibliográficas
+
+WALLS, Craig. Spring Boot in Action. Manning Publications, 2016.
+React Documentation. Disponível em: https://react.dev
+Organização Mundial da Saúde (OMS). Índice de Massa Corporal (IMC). Disponível em: https://www.who.int
+ALURA Cursos Online. Formação Java e Spring Boot / React com TypeScript.
+DEITEL, Paul; DEITEL, Harvey. Java: Como Programar. Pearson, 2017.
