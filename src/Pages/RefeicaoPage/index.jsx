@@ -14,7 +14,6 @@ const RefeicaoPage = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [keywords, setKeywords] = useState("");
-  const [loading, setLoading] = useState(false);
   const [alimentos, setAlimentos] = useState([]);
   const usuario_id = sessionStorage.getItem("usuario_id");
 

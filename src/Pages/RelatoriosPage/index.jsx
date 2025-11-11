@@ -214,7 +214,7 @@ const RelatorioPage = () => {
                 onOk={handleMedidasOk}
                 onCancel={handleMedidasCancel}
                 keyboard={false}
-                destroyOnClose
+                destroyOnHidden
                 width={800}
                 title="Enviar relatório por e-mail"
                 cancelText="Cancelar"
@@ -287,7 +287,7 @@ const RelatorioPage = () => {
                 onOk={handleRefeicoesOk}
                 onCancel={handleRefeicoesCancel}
                 keyboard={false}
-                destroyOnClose
+                destroyOnHidden
                 width={800}
                 title="Enviar relatório por e-mail"
                 cancelText="Cancelar"

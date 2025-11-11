@@ -326,7 +326,7 @@ const RefeicaoForm = () => {
             </ConfigProvider>
             <Modal
               keyboard={false}
-              destroyOnClose
+              destroyOnHidden
               width={800}
               title="Alimento da refeição"
               open={open}
