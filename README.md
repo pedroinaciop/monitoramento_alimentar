@@ -123,10 +123,12 @@ npm start
 
 Com a implantação do sistema, espera-se que o usuário consiga acompanhar de forma prática e visual a evolução de suas medidas corporais e hábitos alimentares, utilizando os indicadores apresentados como apoio para uma rotina mais saudável e equilibrada.
 
+---
+
 ### 📚 Referências Bibliográficas
 
 WALLS, Craig. Spring Boot in Action. Manning Publications, 2016.</br>
 React Documentation. Disponível em: https://react.dev</br>
 Organização Mundial da Saúde (OMS). Índice de Massa Corporal (IMC). Disponível em: https://www.who.int</br>
-ALURA Cursos Online. Formação Java e Spring Boot / React com TypeScript.</br>
+ALURA Cursos Online.</br>
 DEITEL, Paul; DEITEL, Harvey. Java: Como Programar. Pearson, 2017.</br>
