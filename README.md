@@ -3,7 +3,7 @@
 ## 📖 Descrição Geral
 O **Sistema de Monitoramento Alimentar** é uma aplicação web desenvolvida como Trabalho de Conclusão de Curso (TCC) com o objetivo de auxiliar usuários no acompanhamento de seus hábitos alimentares e medidas corporais, promovendo maior controle sobre a saúde e o bem-estar físico.
 
-A plataforma permite o **registro de medidas corporais**, o **cálculo automático do IMC (Índice de Massa Corporal)** e o **monitoramento da evolução física ao longo do tempo**, além de oferecer um **painel interativo** para visualização de dados e relatórios personalizados.
+A plataforma permite o **registro de medidas corporais**, o **cálculo automático do IMC (Índice de Massa Corporal)** e o **monitoramento da evolução física ao longo do tempo**, além de oferecer um **painel interativo** para visualização de dados e relatórios.
 
 ---
 
@@ -16,9 +16,8 @@ Desenvolver um sistema web que possibilite o monitoramento de informações rela
 - Implementar uma API REST utilizando o framework **Spring Boot** para gerenciar dados e regras de negócio;  
 - Criar uma interface interativa com **React**, priorizando a experiência do usuário;  
 - Armazenar as informações em um banco de dados **MySQL**;  
-- Permitir o cálculo automático do **IMC** e a classificação conforme os parâmetros da **Organização Mundial da Saúde (OMS)**;  
-- Disponibilizar gráficos e relatórios de progresso do usuário;  
-- Oferecer notificações e mensagens de feedback conforme os resultados obtidos.
+- Permitir o cálculo automático do **IMC** e a classificação conforme os parâmetros da **Organização Mundial da Saúde (OMS)**;
+- Geração de relatórios com dados cadastrais do usuário
 
 ---
 
@@ -33,34 +32,10 @@ O sistema foi desenvolvido seguindo a arquitetura **cliente-servidor**, dividida
 - **ORM:** JPA (Java Persistence API)  
 - **Gerenciador de dependências:** Maven  
 
-**Principais responsabilidades:**
-- Criação e gerenciamento das entidades `Usuário`, `Medidas`, `Refeição` e `Alimento`;
-- Implementação dos endpoints REST para operações CRUD;
-- Cálculo e classificação do IMC;
-- Integração com o front-end via API HTTP.
-
 ### 🌐 Front-End
 - **Framework:** React  
 - **Linguagem:** JavaScript  
-- **Bibliotecas:** Material UI / Ant Design / Axios  
-
-**Principais funcionalidades:**
-- Formulários de cadastro e login;  
-- Painel de controle com visualização de medidas e IMC;  
-- Gráficos interativos e alertas de progresso;  
-- Comunicação com a API via requisições HTTP.
-
----
-
-## ⚙️ Funcionalidades Principais
-✅ Cadastro e autenticação de usuários  
-✅ Registro de medidas corporais (altura, peso, tórax, cintura, quadril, etc.)  
-✅ Cálculo automático do IMC e exibição da classificação  
-✅ Visualização de relatórios e gráficos de evolução  
-✅ Registro e acompanhamento de refeições diárias  
-✅ Notificações e mensagens de orientação conforme o resultado do IMC  
-
----
+- **Bibliotecas:** Material UI / Ant Design / Axios
 
 ## 📊 Tecnologias Utilizadas
 
@@ -73,6 +48,20 @@ O sistema foi desenvolvido seguindo a arquitetura **cliente-servidor**, dividida
 | Build | **Maven** | Gerenciamento de dependências |
 | Estilo | **Material UI / Ant Design** | Design moderno e responsivo |
 | Hospedagem | **Hostinger / AWS (planejado)** | Implantação da aplicação e banco de dados |
+
+---
+
+## ⚙️Principais responsabilidades
+- Criação e gerenciamento das entidades `Usuário`, `Medidas`, `Refeição` e `Alimento`;
+- Implementação dos endpoints REST para operações CRUD;
+- Cálculo e classificação do IMC;
+- Integração com o front-end via API HTTP.
+
+## ⚙️ Funcionalidades Principais
+✅ Cadastro e autenticação de usuários  
+✅ Registro de medidas corporais (altura, peso, tórax, cintura, quadril, etc.)  
+✅ Cálculo automático do IMC e exibição da classificação  
+✅ Registro e acompanhamento de refeições diárias  
 
 ---
 
@@ -121,8 +110,6 @@ npm install
 npm start
 ```
 
----
-
 ## 🖼️ Prints do Sistema
 
 	Tela de autenticação de usuários
@@ -132,8 +119,6 @@ npm start
 	Registro e listagem das refeições do usuário
 
 	Gráfico de evolução do IMC e peso ao longo do tempo
-
----
 
 ## 📈 Resultados Esperados
 
