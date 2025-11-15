@@ -4,7 +4,7 @@ import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate, useParams } from "react-router-dom";
 import SelectField from '../../Components/SelectInput';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ConfigProvider, Button, Modal } from "antd";
+import { ConfigProvider, Button, Modal, Grid } from "antd";
 import HeaderForm from "../../Components/HeaderForm";
 import FooterForm from "../../Components/FooterForm";
 import InputField from "../../Components/InputField";
@@ -16,6 +16,7 @@ import ptBR from "antd/lib/locale/pt_BR";
 import { useSnackbar } from "notistack";
 import api from "../../services/api";
 import { z } from "zod";
+
 
 const RefeicaoForm = () => {
   const { id } = useParams();
@@ -30,6 +31,8 @@ const RefeicaoForm = () => {
   const usuarioId = sessionStorage.getItem("usuario_id");
   const inputAlimentoRef = useRef(null);
   const formattedDateTime = `${updateDate.toLocaleDateString('pt-BR')} ${updateDate.toLocaleTimeString('pt-BR')}`;
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
 
   const createRefeicaoFormSchema = z.object({
     dataRegistro: z.coerce.date()
@@ -76,25 +79,24 @@ const RefeicaoForm = () => {
 
   const columns = [
     { title: "NOME", dataIndex: "nomeAlimento", width: 200 },
-    { title: "QUANTIDADE", dataIndex: "quantidadeAlimento" },
-    { title: "UNIDADE ALIMENTO", dataIndex: "unidadeAlimento" },
+    { title: "QUANT.", dataIndex: "quantidadeAlimento" },
+    { title: "UNIDADE ALIMENTO", dataIndex: "unidadeAlimento", responsive: ['sm']},
     {
-      title: "EDITAR",
-      width: 140,
-      render: (_, row) => (
-        <Button key="editar" onClick={() => editAlimento(row.id)} icon={<EditOutlined />}>
-          Editar
-        </Button>
-      ),
-    },
-    {
-      title: "DELETAR",
-      width: 140,
-      render: (_, row) => (
-        <Button key="deletar" onClick={(e) => {e.preventDefault(); confirmDelete(row.id)}} icon={<DeleteOutlined />}>
-          Deletar
-        </Button>
-      ),
+        title: 'AÇÕES',
+        render: (_, row) => (
+            screens.md ? (
+                <div className={styled.botoesGrid}>
+                  <Button key="editar" onClick={() => editAlimento(row.id)} icon={<EditOutlined />}>Editar</Button> 
+                  <Button key="deletar" onClick={(e) => {e.preventDefault(); confirmDelete(row.id)}} icon={<DeleteOutlined />}>Deletar</Button>
+                </div>
+            ) : (
+                <div className={styled.botoesGrid}>
+                  <Button key="editar" onClick={() => editAlimento(row.id)} icon={<EditOutlined />}></Button> 
+                  <Button key="deletar" onClick={(e) => {e.preventDefault(); confirmDelete(row.id)}} icon={<DeleteOutlined />}></Button>
+                </div>
+            )
+            
+        ), 
     },
   ];
 

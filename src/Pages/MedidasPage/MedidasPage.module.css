@@ -8,22 +8,6 @@
   gap: 1.25em;
 }
 
-.header {
-  gap: 1.25em;
-  display: flex;
-  flex-direction: row;
-}
-
-.header h1 {
-  font-size: 1.875rem;
-  font-weight: bold;
-}
-
-.header p {
-  font-size: 0.875rem;
-  align-self: center;
-}
-
 .functions {
   height: 40px;
   padding: 0.75em;

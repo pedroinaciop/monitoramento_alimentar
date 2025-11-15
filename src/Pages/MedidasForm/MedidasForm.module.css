@@ -71,3 +71,23 @@
   position: relative;
   top: 0.125rem;
 }
+
+@media (max-width: 767px) {
+  #dataRegistroCampo,#pesoAtualCampo, #pesoDesejadoCampo, #alturaCampo {
+    width: 100%;
+  }
+
+  .row:first-child {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .campos {
+    width: 100%;
+  }
+
+  .imagem, .secaoImagem {
+    width: 0px;
+    display: none;
+  }
+}

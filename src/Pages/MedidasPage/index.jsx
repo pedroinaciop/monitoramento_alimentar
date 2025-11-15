@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import ptBR from "antd/lib/locale/pt_BR";
 import { useSnackbar } from "notistack";
 import api from "../../services/api";
-
+import { Grid } from "antd";
 
 const MedidasPage = () => {
   const navigate = useNavigate();
@@ -17,30 +17,31 @@ const MedidasPage = () => {
   const [medidas, setMedidas] = useState([]);
   const [keywords, setKeywords] = useState("");
   const usuario_id = sessionStorage.getItem("usuario_id");
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
 
   const columns = [
-    { title: "DATA DE REGISTRO", dataIndex: "dataRegistro", width: 200 },
-    { title: "PESO ATUAL", dataIndex: "pesoAtual" },
-    { title: "PESO DESEJADO", dataIndex: "pesoDesejado" },
-    { title: "ALTURA", dataIndex: "altura" },
+    { title: "DATA DE REGISTRO", dataIndex: "dataRegistro", width: 160 },
+    { title: "PESO ATUAL", dataIndex: "pesoAtual", responsive: ['sm'] },
+    { title: "PESO DESEJADO", dataIndex: "pesoDesejado", responsive: ['sm']},
+    { title: "ALTURA", dataIndex: "altura", responsive: ['lg']},
     {
-      title: "EDITAR",
-      width: 140,
-      render: (_, row) => (
-        <Button key="editar" onClick={() => navigate(`/editar/medidas/${row.id}`)} icon={<EditOutlined />}>
-          Editar
-        </Button>
-      ),
-    },
-    {
-      title: "DELETAR",
-      width: 140,
-      render: (_, row) => (
-        <Button key="deletar" href={`/medida/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setMedidas, "/medida/", enqueueSnackbar))}} icon={<DeleteOutlined />}>
-          Deletar
-        </Button>
-      ),
-    },
+            title: 'AÇÕES',
+            render: (_, row) => (
+                screens.md ? (
+                    <div className={styled.botoesGrid}>
+                    <Button key="editar" onClick={() => navigate(`/editar/medidas/${row.id}`)} icon={<EditOutlined />}>Editar</Button>
+                    <Button key="deletar" href={`/medida/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setMedidas, "/medida/", enqueueSnackbar))}} icon={<DeleteOutlined />}>Deletar</Button>
+                    </div>
+                ) : (
+                    <div className={styled.botoesGrid}>
+                      <Button key="editar" onClick={() => navigate(`/editar/medidas/${row.id}`)} icon={<EditOutlined />}></Button>
+                      <Button key="deletar" href={`/medida/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setMedidas, "/medida/", enqueueSnackbar))}} icon={<DeleteOutlined />}></Button>
+                    </div>
+                )
+                
+            ), 
+        },
   ];
 
   const filterData = (data, keywords) => {
@@ -75,7 +76,14 @@ const MedidasPage = () => {
           <p>{medidas.length} Registro(s) encontrado(s)</p>
         </header>
         <div className={styled.functions}>
-          <Input.Search className={styled.input} placeholder="Procure um registro" onSearch={(value) => setKeywords(value)}/>
+          <Input.Search 
+            style={{
+              display: screens.xl ? "block" : "none"
+             }}
+            className={styled.input} 
+            placeholder="Procure um registro" 
+            onSearch={(value) => setKeywords(value)}
+          />
           <div className={styled.buttons}>
             <Button className={styled.button} type="primary" icon={<DownloadOutlined />} size="large" onClick={() => downloadExcel("medidas", medidas, enqueueSnackbar)}>
               Baixar Dados

@@ -1,50 +1,60 @@
 .btnRegister {
-    width: 200px;
-    margin: 0rem 1.50rem 0rem 0rem;
-    padding: 1rem;
-    border: none;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    background-color: var(--mainColor);
-    color: var(--white);
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .btnRegister:hover {
-    background-color: var(--activeButton);
-  }
-  
-  .btnRegister:focus {
-    outline: none;
-    background-color: var(--activeButton);
-  }
-  
-  .btnRegister:active {
-    outline: none;
-    background-color: var(--mainColor);
+  width: 230px;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: var(--mainColor);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btnRegister:hover {
+  background-color: var(--activeButton);
+}
+
+.btnRegister:focus {
+  outline: none;
+  background-color: var(--activeButton);
+}
+
+.btnRegister:active {
+  outline: none;
+  background-color: var(--mainColor);
+}
+
+.btnLimpar {
+  width: 230px;
+  padding: 1rem;
+  border: 1px solid var(--mainColor);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  color: var(--mainColor);
+  font-size: var(--fontPadrao);
+  cursor: pointer;
+}
+
+.btnLimpar:hover {
+  border: 1px solid var(--activeButton);
+  color: var(--activeButton);
+}
+
+.btnLimpar:active {
+  border: 1px solid var(--activeButton);
+  background-color: var(--activeButton);
+  color: var(--white);
+}
+
+@media (max-width: 1180px) {
+  .btnRegister {
+    height: 40px;
+    padding: .8rem;
   }
 
   .btnLimpar {
-    width: 200px;
-    margin: 0rem 1.50rem 0rem 0rem;
-    padding: 1rem;
-    border: 1px solid var(--mainColor);
-    font-weight: bold;
-    border-radius: 0.5rem;
-    background-color: var(--white);
-    color: var(--mainColor);
-    font-size: var(--fontPadrao);
-    cursor: pointer;
+    height: 40px;
+    padding: .7rem;
   }
-
-  .btnLimpar:hover {
-    border: 1px solid var(--activeButton);
-    color: var(--activeButton);
-  }
-  
-  .btnLimpar:active {
-    border: 1px solid var(--activeButton);
-    background-color: var(--activeButton);
-    color: var(--white);
-  }
+}

@@ -56,20 +56,3 @@
   align-items: center;
 }
 
-/* Ajuste para telas pequenas */
-@media (max-width: 768px) {
-  .sider {
-    position: fixed;
-    z-index: 1000;
-    height: 100%;
-  }
-
-  .userData {
-    padding: 10px 0;
-  }
-
-  .userName {
-    font-size: 14px;
-    text-align: center;
-  }
-}

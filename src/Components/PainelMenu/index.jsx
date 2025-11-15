@@ -58,7 +58,7 @@ const PainelMenu = () => {
   return (
     <Sider 
       className={styled.sider}  
-      breakpoint="md" 
+      breakpoint="lg" 
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}

@@ -16,12 +16,9 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .basePage {
-    flex-direction: column; 
-  }
-
   .content {
-    margin: 8px;
-    border-radius: 8px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
   }
 }

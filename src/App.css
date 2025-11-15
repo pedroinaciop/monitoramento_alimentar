@@ -197,3 +197,104 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  font-size: 16px; 
+}
+
+.header {
+  gap: 1.25em;
+  display: flex;
+  flex-direction: row;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.header p {
+  font-size: 0.875rem;
+  align-self: center;
+}
+
+.botoesGrid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+     font-size: 14px;;
+  }
+
+  :global(.ant-select-selector) {
+    font-size: 14px;
+  }
+
+  :global(.ant-table-cell) {
+    font-size: 14px;
+  }
+
+  :global(.ant-pagination) {
+    font-size: 14px;
+  }
+
+  :global(.ant-btn) {
+    font-size: 14px;
+  }
+
+  :global(.ant-select-item-option-content) {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+     font-size: 13px;
+  }
+
+  html {
+     font-size: 13px;
+  }
+
+  :global(.ant-select-selector) {
+     font-size: 13px;
+  }
+
+  :global(.ant-table-cell) {
+     font-size: 13px;
+  }
+
+  :global(.ant-pagination) {
+     font-size: 13px;
+  }
+
+  :global(.ant-btn) {
+     font-size: 13px;
+  }
+
+  :global(.ant-select-item-option-content) {
+     font-size: 13px;
+  }
+
+  :global(.ant-select-selection-item) {
+    font-size: 13px;
+  }
+
+  .header {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .header p {
+    align-self: flex-start;
+  }
+}
+

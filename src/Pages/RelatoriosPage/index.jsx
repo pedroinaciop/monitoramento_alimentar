@@ -267,7 +267,7 @@ const RelatorioPage = () => {
                 </form>
               </Modal>
             <div className={styled.btnGroup}>
-              <button type="button" className={styled.btnRegister} onClick={showMedidasModal}>Enviar relatório por e-mail</button>
+              <button type="button" className={styled.btnRegister} onClick={showMedidasModal}>Enviar por e-mail</button>
               <button type="submit" className={styled.btnRegister}>Gerar relatório</button>
             </div>
           </section>
@@ -365,7 +365,7 @@ const RelatorioPage = () => {
               />
             </div>
             <div className={styled.btnGroup}>
-              <button type="button" className={styled.btnRegister} onClick={showRefeicoesModal}>Enviar relatório por e-mail</button>
+              <button type="button" className={styled.btnRegister} onClick={showRefeicoesModal}>Enviar por e-mail</button>
               <button type="submit" className={styled.btnRegister}>Gerar relatório</button>
             </div>
           </section>

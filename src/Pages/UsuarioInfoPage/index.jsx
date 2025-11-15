@@ -9,6 +9,8 @@ import { useState, useEffect } from 'react';
 import ptBR from 'antd/lib/locale/pt_BR';
 import { useSnackbar } from 'notistack';
 import api from '../../services/api';
+import { Grid } from "antd";
+
 
 const UsuarioInfoPage = () => {
     const navigate = useNavigate();
@@ -16,37 +18,41 @@ const UsuarioInfoPage = () => {
     const [keywords, setKeywords] = useState('');
     const [userInfo, setUserInfo] = useState([]);
     const usuario_id = sessionStorage.getItem("usuario_id");
+    const { useBreakpoint } = Grid;
+    const screens = useBreakpoint();
 
     const filterData = (data, keywords) => {
         if (!keywords) return data;
     
         return data.filter((item) =>
-            item.dataRegistro?.toLowerCase().includes(keywords.toLowerCase()) 
+            item.dataRegistro?.toLowerCase().includes(keywords.toLowerCase()) ||
+            item.idade ||
+            item.sexoBiologico?.toLowerCase().includes(keywords.toLowerCase()) ||
+            item.nivelAtividadeFisica?.toLowerCase().includes(keywords.toLowerCase())
         );
     };     
 
     const columns = [
-        { title: 'DATA DE REGISTRO', dataIndex: 'dataRegistro', width: 200},
-        { title: 'IDADE', dataIndex: 'idade'},
-        { title: 'GÊNERO', dataIndex: 'sexoBiologico'},
-        { title: 'NÍVEL ATIVIDADE FÍSICA', dataIndex: 'nivelAtividadeFisica'},
+        { title: 'DATA DE REGISTRO', dataIndex: 'dataRegistro', width: 160},
+        { title: 'IDADE', dataIndex: 'idade', responsive: ['sm']},
+        { title: 'GÊNERO', dataIndex: 'sexoBiologico', responsive: ['md']},
+        { title: 'NÍVEL ATIVIDADE FÍSICA', dataIndex: 'nivelAtividadeFisica', responsive: ['lg']},
         {
-            title: 'EDITAR',
-            width: 140,
+            title: 'AÇÕES',
             render: (_, row) => (
-                <Button key="editar" onClick={() => navigate(`/editar/info/usuario/${row.id}`)} icon={<EditOutlined />}>
-                    Editar
-                </Button>
+                screens.md ? (
+                    <div className={styled.botoesGrid}>
+                        <Button key="editar" onClick={() => navigate(`/editar/info/usuario/${row.id}`)} icon={<EditOutlined />}>Editar</Button>
+                        <Button key="deletar" onClick={() => confirmDelete(row.id, setUserInfo, "/info/usuarios/", enqueueSnackbar)} icon={<DeleteOutlined />}>Deletar</Button>
+                    </div>
+                ) : (
+                     <div className={styled.botoesGrid}>
+                        <Button key="editar" onClick={() => navigate(`/editar/info/usuario/${row.id}`)} icon={<EditOutlined />}></Button>
+                        <Button key="deletar" onClick={() => confirmDelete(row.id, setUserInfo, "/info/usuarios/", enqueueSnackbar)} icon={<DeleteOutlined />}></Button>
+                    </div>
+                )
+                
             ), 
-        },
-        {
-            title: 'DELETAR',
-            width: 140,
-            render: (_, row) => (
-               <Button key="deletar" onClick={() => confirmDelete(row.id, setUserInfo, "/info/usuarios/", enqueueSnackbar)} icon={<DeleteOutlined />}>
-                    Deletar
-                </Button>
-            ),
         },
     ];
 
@@ -78,6 +84,9 @@ const UsuarioInfoPage = () => {
                 </header>
                 <div className={styled.functions}>
                     <Input.Search
+                          style={{
+                            display: screens.xl ? "block" : "none"
+                        }}
                         className={styled.input}
                         placeholder="Procure um registro"
                         onSearch={(value) => setKeywords(value)}
@@ -102,6 +111,7 @@ const UsuarioInfoPage = () => {
             </section>
             <ConfigProvider locale={ptBR}>
                 <ProTable
+                    scroll={{ x: 'max-content' }}
                     rowKey="id"
                     size="large"
                     search={false}

@@ -40,14 +40,13 @@ const HomePage = () => {
                     <div className={styled.imcContainer}>
                         <Modal
                             title="Índice de Massa Corporal (IMC)"
-                            destroyOnClose
+                            destroyOnHidden
                             width={800}
                             open={open}
                             onCancel={() => setOpen(false)}
                             footer={null}
                         >
                             <p>O IMC é uma medida utilizada para avaliar se uma pessoa está dentro do peso ideal em relação à sua altura. Ele é calculado dividindo o peso pela altura ao quadrado.<br/> No Monitoramento Alimentar, o IMC é calculado com base no último registro de medidas.</p>
-                            <p><br/>A classificação do IMC é a seguinte: </p>
                             <ul className={styled.listaCategoriasIMC}>
                                 { imcValue > 0 && imcValue < 18.50 ? (
                                     <li className={`${styled.itemCategoria} ${styled.itemCategoriaSelected}`}>

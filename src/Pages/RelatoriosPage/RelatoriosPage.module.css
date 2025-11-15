@@ -25,16 +25,6 @@
   justify-content: space-between;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-}
-
-.header h1 {
-  font-size: 1.875rem;
-  font-weight: bold;
-}
-
 #dataInicialCampo, #dataFinalCampo {
   width: 48%;
 }
@@ -48,8 +38,8 @@
 
 .btnRegister {
   margin-top: auto;
-  width: 220px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   border: none;
   font-weight: bold;
   border-radius: 0.5rem;
@@ -71,4 +61,29 @@
 .btnRegister:active {
   outline: none;
   background-color: var(--mainColor);
+}
+
+@media (max-width: 870px) {
+  .campos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .btnRegister {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  #dataInicialCampo, #dataFinalCampo {
+    width: 44%;
+  }
+
+  .btnGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
 }

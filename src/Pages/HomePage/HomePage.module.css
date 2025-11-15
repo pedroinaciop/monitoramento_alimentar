@@ -24,7 +24,7 @@
 }
 
 .card {
-  width: 23%;
+  width: 285px;
   gap: 1.25em;
   border-radius: 10px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.11);
@@ -146,7 +146,7 @@
 
 .primeiroItemCategoria {
   width: 20px;
-  height:20px;
+  height: 20px;
   background-color: #26E6F4;
   border: 1px solid rgba(0, 0, 0, 0.259);
   border-radius: 50%;
@@ -205,4 +205,11 @@
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .itemCategoria {
+    justify-content: space-between;
+    width: 100%; 
+  }
 }

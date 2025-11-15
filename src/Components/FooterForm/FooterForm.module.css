@@ -9,7 +9,7 @@
 
 .updates {
   display: flex;
-  gap: 1.563rem;
+  gap: 1rem;
 }
 
 #includeDate{
@@ -23,4 +23,17 @@
 .footer input {
   background-color: var( --light-gray);
   width: 90%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media (max-width: 1180px) {
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

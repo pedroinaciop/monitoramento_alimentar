@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import ptBR from "antd/lib/locale/pt_BR";
 import { useSnackbar } from "notistack";
 import api from "../../services/api";
+import { Grid } from "antd";
 
 const RefeicaoPage = () => {
   const navigate = useNavigate();
@@ -16,27 +17,27 @@ const RefeicaoPage = () => {
   const [keywords, setKeywords] = useState("");
   const [alimentos, setAlimentos] = useState([]);
   const usuario_id = sessionStorage.getItem("usuario_id");
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
 
   const columns = [
-    { title: "DATA DE REGISTRO", dataIndex: "dataRegistro", width: 200 },
-    { title: "TIPO DE REFEIÇÃO", dataIndex: "tipoRefeicao" },
+    { title: "DATA DE REGISTRO", dataIndex: "dataRegistro", width: 160},
+    { title: "TIPO DE REFEIÇÃO", dataIndex: "tipoRefeicao", responsive: ['sm']},
     {
-      title: "EDITAR",
-      width: 140,
+      title: 'AÇÕES',
       render: (_, row) => (
-        <Button key="editar" onClick={() => navigate(`/editar/refeicao/${row.id}`)}icon={<EditOutlined />}>
-          Editar
-        </Button>
-      ),
-    },
-    {
-      title: "DELETAR",
-      width: 140,
-      render: (_, row) => (
-        <Button key="deletar" href={`/refeicao/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setAlimentos, "/refeicao/", enqueueSnackbar))}} icon={<DeleteOutlined />}>
-          Deletar
-        </Button>
-      ),
+        screens.md ? (
+            <div className={styled.botoesGrid}>
+              <Button key="deletar" href={`/refeicao/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setAlimentos, "/refeicao/", enqueueSnackbar))}} icon={<DeleteOutlined />}>Deletar</Button>
+              <Button key="editar" onClick={() => navigate(`/editar/refeicao/${row.id}`)}icon={<EditOutlined />}>Editar</Button>
+            </div>
+        ) : (
+            <div className={styled.botoesGrid}>
+              <Button key="deletar" href={`/refeicao/${row.id}`} onClick={(e) => {e.preventDefault(confirmDelete(row.id, setAlimentos, "/refeicao/", enqueueSnackbar))}} icon={<DeleteOutlined />}></Button>
+              <Button key="editar" onClick={() => navigate(`/editar/refeicao/${row.id}`)}icon={<EditOutlined />}></Button>
+            </div>
+        )
+      ), 
     },
   ];
 
@@ -72,7 +73,13 @@ const RefeicaoPage = () => {
           <p>{alimentos.length} Registro(s) encontrado(s)</p>
         </header>
         <div className={styled.functions}>
-          <Input.Search className={styled.input} placeholder="Procure um registro" onSearch={(value) => setKeywords(value)}/>
+          <Input.Search
+            style={{
+              display: screens.xl ? "block" : "none"
+            }} 
+            className={styled.input} 
+            placeholder="Procure um registro" 
+            onSearch={(value) => setKeywords(value)}/>
           <div className={styled.buttons}>
             <Button className={styled.button} type="primary" icon={<DownloadOutlined />} size="large" onClick={() => downloadExcel('refeicoes', alimentos, enqueueSnackbar)}>
               Baixar Dados
